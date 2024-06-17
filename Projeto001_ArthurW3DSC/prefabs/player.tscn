@@ -73,7 +73,7 @@ script = ExtResource("1_2sxje")
 position = Vector2(-2.76889e-07, 0)
 scale = Vector2(0.167969, 0.161133)
 sprite_frames = SubResource("SpriteFrames_jfhed")
-animation = &"idle"
+animation = &"move_down"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="."]
