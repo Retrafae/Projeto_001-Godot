@@ -62,22 +62,22 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8s71p"]
-radius = 10.6749
+radius = 30.9634
 
 [node name="player" type="Area2D"]
 position = Vector2(5.96046e-08, 1)
-scale = Vector2(4.02608, 3.96413)
+scale = Vector2(1, 0.985)
 script = ExtResource("1_2sxje")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.76889e-07, 0)
-scale = Vector2(0.167969, 0.161133)
+scale = Vector2(0.5, 0.479)
 sprite_frames = SubResource("SpriteFrames_jfhed")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.39281)
+position = Vector2(-5.96046e-08, 7.1066)
 scale = Vector2(0.905128, -0.763751)
 shape = SubResource("CircleShape2D_8s71p")
 
