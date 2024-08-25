@@ -11,6 +11,7 @@ const SPEED := 400
 func _ready():
 	hide()
 	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,4 +49,4 @@ func _on_body_entered(body):
 func startpos(pos):
 	position = pos
 	show()
-	collision.disbled = false
+	collision.disabled = false

@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=3 uid="uid://drrebj2srfaue"]
+
+[ext_resource type="FontFile" uid="uid://cwbt2ugsjq30h" path="res://font/Dihil.ttf" id="1_7hqo1"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_b5guw"]
+[ext_resource type="StyleBox" uid="uid://d0umtam05ylip" path="res://button_style.tres" id="2_8qtvm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dbfi"]
+bg_color = Color(0.652379, 0.518462, 0.879486, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxuxv"]
+bg_color = Color(0.867872, 0.328645, 0.919759, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 5.0
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_b5guw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = 240.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -4
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_7hqo1")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.5
+offset_top = -99.0
+offset_right = 240.5
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -4
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_7hqo1")
+theme_override_font_sizes/font_size = 64
+text = "Dodge the bugs
+Arthur Walter"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -139.0
+offset_right = 114.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.654232, 0.654232, 0.654232, 1)
+theme_override_colors/font_pressed_color = Color(0.462008, 0.0103535, 0.684049, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7hqo1")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = ExtResource("2_8qtvm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0dbfi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vxuxv")
+theme_override_styles/normal = ExtResource("2_8qtvm")
+text = "Start"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
